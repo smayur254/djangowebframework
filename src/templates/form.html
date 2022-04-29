@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block bodycontent %}
+
+
+<form action='' method='POST'>
+    {% csrf_token %}
+    {{ form}}
+    <input type='submit' value='save' />
+</form>
+
+{% comment %} <form action="/your-name/" method="post">
+    <label for="your_name">Your name: </label>
+    <input id="your_name" type="text" name="your_name" value="{{ objext.name }}">
+    <input type="submit" value="OK">
+</form> {% endcomment %}
+{% endblock bodycontent %}

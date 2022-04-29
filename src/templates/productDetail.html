@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block bodycontent %}
+
+<h3>
+    {{ object.name }}
+</h3>
+<p> {{ object.description }}</p>
+<h5> {{object.rate }}</h5>
+<h5> {{ object.feature }}</h5>
+<a href='{% url 'updateform'  object.id %}'><button>update</button></a>
+<form action='{% url 'productdelete' object.id %}' method="POST">
+    {% csrf_token %}
+   
+    <input type='submit' value='Delete'/>
+     <a href='/'>Cancle</a>
+<form>
+{% endblock bodycontent %}
